@@ -1,9 +1,5 @@
 package G_VGuppgift;
-
-import javax.swing.*;
-
-public class Plants {
-
+public class Plants implements Liquid {
     private double height; //Här använder jag inkapsling på dessa essentiella variabler.
     private String name; //Här använder jag inkapsling på dessa essentiella variabler.
 
@@ -27,38 +23,8 @@ public class Plants {
         }
         this.height = height;
     }
-    public void plantLoop () {
-        Palmtree laura = new Palmtree("Laura", 5);
-        Palmtree putte = new Palmtree("Putte", 1);
-        Carnivorous meatloaf = new Carnivorous("Meatloaf", 0.7);
-        Cactus igge = new Cactus("Igge", 20);
+    public void printPlant () { //Polymorfism
 
-        while (true) {
-            setName(JOptionPane.showInputDialog(null, "Vilken växt ska få vätska?"));
-
-            if (getName().equalsIgnoreCase("Igge")){
-                igge.printPlant();
-                break;
-            }
-            else if (getName().equalsIgnoreCase("Laura")) {
-                laura.printPlant();
-                break;
-            }
-            else if (getName().equalsIgnoreCase("Meatloaf")) {
-                meatloaf.printPlant();
-                break;
-            }
-            else if (getName().equalsIgnoreCase("Putte")) {
-                putte.printPlant();
-                break;
-            }
-            else {
-                JOptionPane.showMessageDialog(null, "Ingen växt hittades med det namnet, försök igen med ett annat");
-            }
-
-        }
     }
-
-
 }
 
